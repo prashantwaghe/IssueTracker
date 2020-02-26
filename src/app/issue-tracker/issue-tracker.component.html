@@ -1,0 +1,34 @@
+<div class="container" *ngIf="issuesArr.length > 0">
+    <div *ngIf="!edit">
+        <h2 class="headName">Issue tracker for {{IssueListName}}</h2>
+        <button class="btn btn-primary btnEdit super-vertical-align" (click)="edit = !edit">Edit</button>
+    </div>
+    <div *ngIf="edit">
+        <input type="text" [(ngModel)]="IssueListName" class="form-control listName">
+        <button class="btn btn-primary btnEdit" (click)="edit = !edit">Done</button>
+    </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of issuesArr; let i = index" [ngClass]="{'red': item.status === 'Not started', 'green': item.status === 'Done', 'blue': item.status === 'In progress'}">
+                    <td>{{item.id}}</td>
+                    <td>{{item.title}}</td>
+                    <td>
+                        <select [(ngModel)]="item.status" (change)="statusChanged(i)">
+                            <option value="Not started">Not started</option>
+                            <option value="Done">Done</option>
+                            <option value="In progress">In progress</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+.container {
+    margin-top: 50px;
+}
+
+.table-responsive {
+    margin-top: 20px;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+thead tr {
+    background-color: #ccc;
+}
+
+tr {
+    margin: 5px 0;
+}
+
+.btnEdit {
+    margin-left: 10px;
+}
+
+.super-vertical-align {
+    vertical-align: super;
+}
+
+.headName,
+.listName {
+    display: inline-block;
+}
+
+.listName {
+    width: 50%;
+}
+
+table.table tbody tr td,
+table.table thead tr th,
+table.table thead {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
